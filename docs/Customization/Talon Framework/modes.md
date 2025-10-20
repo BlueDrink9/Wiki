@@ -56,3 +56,11 @@ title: /My Game/
 -
 attack: key(enter)
 ```
+
+By default, any newly created modes will be active when talon starts. This can be changed by adding a line like this after the mode is declared in a python file:
+
+```python
+app.register("ready", lambda _: actions.mode.disable("single_application"))
+```
+
+A similar method is [used to disable speech on startup](https://talon.wiki/Customization/Examples/turn_off_listening/)
